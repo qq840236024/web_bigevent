@@ -42,7 +42,7 @@ $(function() {
             password: $('#form_reg [name=password]').val()
         }
 
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function(res) {
+        $.post('/api/reguser', data, function(res) {
             if (res.status !== 0) {
                 // layui 里的 弹窗方法
                 return layer.msg(res.message)
@@ -57,7 +57,7 @@ $(function() {
         e.preventDefault();
 
         $.ajax({
-            url: 'http://api-breakingnews-web.itheima.net/api/login',
+            url: '/api/login',
             method: 'POST',
             data: $(this).serialize(),
             success: function(res) {
